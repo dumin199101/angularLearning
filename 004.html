@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>表单利用ng-value进行表达式计算</title>
+    <script src="components/angular.js"></script>
+</head>
+<body ng-app="hd" ng-controller="ctrl">
+     名称：<input type="text" ng-model="goods.name"/><br/>
+     单价：<input type="text" ng-model="goods.price"/><br/>
+     数量：<input type="text" ng-model="goods.num"/><br/>
+     总价：<input type="text" ng-value="goods.price*goods.num">
+<script>
+    var m = angular.module('hd',[]);
+    m.controller('ctrl',['$scope',function($scope){
+        $scope.goods = {name:"mac pro", price:3000, num:1}
+    }]);
+</script>
+</body>
+</html>
