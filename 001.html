@@ -6,18 +6,19 @@
     <script src="components/angular.js"></script>
 </head>
 <body>
-    <div ng-app="hd" ng-controller="ctrl">
-        <h1 ng-bind="name"></h1>
-        <input type="text" value="" ng-model="name"/>
-        <h1>{{name}}</h1>
-    </div>
-    <script>
-         var m = angular.module('hd',[]);
-         //双向数据绑定
-         m.controller('ctrl',['$scope',function($scope){
-              //view model
-              $scope.name = '后盾网';
-         }]);
-    </script>
+<div ng-app="hd" ng-controller="ctrl">
+    <h1 ng-bind="name"></h1>
+    <input type="text" value="" ng-model="name"/>
+
+    <h1>{{name}}</h1>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    //双向数据绑定
+    m.controller('ctrl', ['$scope', function ($scope) {
+        //view model
+        $scope.name = '后盾网';
+    }]);
+</script>
 </body>
 </html>
