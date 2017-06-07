@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>$scope的基本使用</title>
     <script src="components/angular.js"></script>
+    <style>
+        .ng-cloak{display:none;}
+    </style>
 </head>
-<body ng-app="hd">
+<body ng-app="hd" ng-cloak class="ng-cloak">
      <div ng-controller="ctrl">
          名称：{{goods.data.name}}<br/>
          价格：{{goods.data.price}}<br/>
