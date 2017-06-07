@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ng-model绑定表单</title>
+    <script src="components/angular.js"></script>
+</head>
+<body ng-app="hd" ng-controller="ctrl">
+   <form action="1.php" method="post">
+       <input type="text"  name="title" ng-model="name">
+       {{name}}
+   </form>
+   <script>
+        var m = angular.module('hd',[]);
+        m.controller('ctrl',['$scope',function($scope){
+            $scope.name = 'du';
+        }]);
+    </script>
+</body>
+</html>
