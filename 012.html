@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular比较函数的使用</title>
+    <script src="components/angular.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+
+</div>
+<script>
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+         console.log(angular.isArray([]));
+         console.log(angular.isString('a'));
+         console.log(angular.isNumber(123));
+         console.log(angular.isObject({}));
+         console.log(angular.isFunction(function(){}));
+         console.log(angular.isDate(new Date()));
+         var a;
+         console.log(angular.isDefined(a)); //判读是否赋值初始化
+         c = {name:"dumin"};
+         d = {name:"dumin"};
+         console.log(angular.equals(c,d)); //比较值、对象、表达式是否相等
+
+    }]);
+</script>
+</body>
+</html>
