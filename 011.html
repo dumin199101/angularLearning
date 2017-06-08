@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular处理json数据</title>
+    <script src="components/angular.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+{data}
+</div>
+<script>
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = angular.fromJson(localStorage.getItem('data'));
+    }]);
+</script>
+</body>
+</html>
