@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular函数使用及对象深拷贝</title>
+    <script src="components/angular.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+
+</div>
+<script>
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+        console.log(angular.version);
+        console.log(angular.uppercase('houdunwang'));
+        console.log(angular.lowercase('HOUDUN'));
+
+        var a = {name: 'dumin'};
+        var c = a;
+        c.name = 'du';
+        console.log(a.name);  //du 址传递
+
+        //深拷贝
+        var d = {};
+        angular.copy(a, d);
+        d.name = 'wang'
+        console.log(a.name) //du 值传递
+
+
+    }]);
+</script>
+</body>
+</html>
