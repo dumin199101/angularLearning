@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular之ng-show,ng-hide,ng-if,ng-disabled</title>
+    <script src="components/angular.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <h1 ng-if="false">大家</h1>
+    <label for=""><input type="checkbox" ng-model="status"/>接受协议</label>
+    <button ng-init="copyright=false" ng-click="copyright=!copyright">查看协议</button>
+    <textarea ng-show="copyright">协议内容</textarea>
+    <input ng-disabled="!status" type="button" value="登录"/>
+</div>
+<script>
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+
+    }]);
+</script>
+</body>
+</html>
