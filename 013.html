@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="components/angular.js"></script>
+    <script src="components/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+      <h1 ng-init="name='dumin'">{{name}}</h1>
+      <h2 ng-trim ng-model="title"></h2>
+      <form action="1.php" method="post">
+          <input type="text" name="title" value="" ng-model="title" ng-trim/>
+          <input type="text" name="data" value=""/>
+          <input type="submit" value="提交"/>
+      </form>
+      {{title}}
+</div>
+<script>
+    //data中的数据经过trim处理，title中的数据不会经过trim处理
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+         $scope.title = '';
+         $(form).submit(function(){
+              $(input[name='data']).val($scope.title);  //这个地方经过scope获取是会对其进行trim处理
+         });
+    }]);
+</script>
+</body>
+</html>
