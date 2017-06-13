@@ -1,2 +1,3 @@
 # angularLearning
 AngularLearning
+学习angular,为Web项目前后分离做准备
