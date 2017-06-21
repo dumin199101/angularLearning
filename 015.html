@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular之ng-repeat的使用</title>
+    <script src="components/angular.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+     <li ng-repeat="(k,v) in data" style="{{$first?'color:red':''}}">
+         {{k}}---{{v.name}}----{{v.age}}
+     </li>
+     <li ng-repeat="v in arr track by $index">
+          {{v}}
+     </li>
+</div>
+<script>
+    //$first $last $middle $even $odd
+    var app = angular.module('hd', []);
+    app.controller('ctrl', ['$scope', function ($scope) {
+        //遍历对象
+        $scope.data = [
+            {name:'du',age:26},
+            {name:'dumin',age:25},
+            {name:'dudu',age:23},
+            {name:'dum',age:22}
+        ];
+        //遍历数组：使用$index来区分不同之处，否则用值报错
+        $scope.arr = ['后盾人','houdun','houdun','后盾'];
+    }]);
+</script>
+</body>
+</html>
